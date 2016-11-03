@@ -6,5 +6,5 @@ var app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.get('/', function (req, res) {
-    res.render('pages/index',{user:"Reuven", num_of_items:4, options:['All ', 'fl1 ', 'fl2 ']});
+    res.render('pages/index',{user:"Reuven", num_of_items:4, options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
 }).listen(3000);
