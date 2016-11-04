@@ -3,6 +3,15 @@
  */
 var express = require('express');
 var app = express();
+var mongo = require('mongoose');
+var Schema = mongo.Schema;
+var db = mongo.createConnection('mongodb://localhost:27017/myfirstdatabase');
+db.once('open', function() { console.log("Connected to DB") });
+db.on('error', function() {  console.log("Error connecting to DB") });
+console.log('Pending DB connection');
+var categorySchema = new Schema({
+    name: String
+});
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.get('/', function (req, res) {
