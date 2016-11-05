@@ -12,6 +12,20 @@ console.log('Pending DB connection');
 var categorySchema = new Schema({
     name: String
 });
+var Category = db.model('Category',categorySchema);
+module.exports = Category;
+/*var cat = new Category({
+    name:'ABA'
+});
+cat.save(function (err) {
+    if (err) throw err;
+    console.log('su');
+});*/
+Category.find({}, function (err, categories) {
+    if (err) throw err;
+    console.log(categories);
+});
+
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.get('/', function (req, res) {
