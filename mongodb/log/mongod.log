@@ -128,3 +128,5 @@
 2016-11-05T22:37:31.356+0200 I NETWORK  [conn23] end connection 127.0.0.1:63002 (1 connection now open)
 2016-11-05T22:37:31.359+0200 I NETWORK  [conn24] end connection 127.0.0.1:63003 (0 connections now open)
 2016-11-05T22:37:32.845+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63036 #25 (1 connection now open)
+2016-11-05T22:43:47.331+0200 I NETWORK  [conn25] end connection 127.0.0.1:63036 (0 connections now open)
+2016-11-05T22:43:49.063+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:65507 #26 (1 connection now open)
