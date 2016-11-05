@@ -45,3 +45,86 @@
 2016-11-05T19:58:19.612+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62995 #11 (1 connection now open)
 2016-11-05T20:00:35.935+0200 I NETWORK  [conn11] end connection 127.0.0.1:62995 (0 connections now open)
 2016-11-05T20:00:41.543+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63820 #12 (1 connection now open)
+2016-11-05T20:16:38.742+0200 I NETWORK  [conn12] end connection 127.0.0.1:63820 (0 connections now open)
+2016-11-05T20:16:40.421+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53342 #13 (1 connection now open)
+2016-11-05T20:23:53.002+0200 I NETWORK  [conn13] end connection 127.0.0.1:53342 (0 connections now open)
+2016-11-05T20:24:00.819+0200 I CONTROL  [serviceShutdown] got SERVICE_CONTROL_PRESHUTDOWN request from Windows Service Control Manager, will terminate after current cmd ends
+2016-11-05T20:24:00.822+0200 I FTDC     [serviceStopWorker] Shutting down full-time diagnostic data capture
+2016-11-05T20:24:00.835+0200 I CONTROL  [serviceStopWorker] now exiting
+2016-11-05T20:24:00.835+0200 I NETWORK  [serviceStopWorker] shutdown: going to close listening sockets...
+2016-11-05T20:24:00.835+0200 I NETWORK  [serviceStopWorker] closing listening socket: 472
+2016-11-05T20:24:00.835+0200 I NETWORK  [serviceStopWorker] shutdown: going to flush diaglog...
+2016-11-05T20:24:00.835+0200 I NETWORK  [serviceStopWorker] shutdown: going to close sockets...
+2016-11-05T20:24:00.837+0200 I STORAGE  [serviceStopWorker] WiredTigerKVEngine shutting down
+2016-11-05T20:24:00.934+0200 I STORAGE  [serviceStopWorker] shutdown: removing fs lock...
+2016-11-05T20:24:00.934+0200 I CONTROL  [serviceStopWorker] dbexit:  rc: 49
+2016-11-05T20:26:10.720+0200 I CONTROL  [main] ***** SERVER RESTARTED *****
+2016-11-05T20:26:11.257+0200 I CONTROL  [main] Hotfix KB2731284 or later update is not installed, will zero-out data files
+2016-11-05T20:26:11.267+0200 I CONTROL  [main] Trying to start Windows service 'MongoDB'
+2016-11-05T20:26:11.267+0200 I STORAGE  [thread1] Service running
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] MongoDB starting : pid=5532 port=27017 dbpath=C:\Users\reuvenp\WebstormProjects\my_project\mongodb\data 64-bit host=reuvenp-e7250
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] db version v3.2.10
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] git version: 79d9b3ab5ce20f51c272b4411202710a082d0317
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1t-fips  3 May 2016
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] modules: none
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] build environment:
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-05T20:26:11.277+0200 I CONTROL  [initandlisten] options: { config: "C:\Users\reuvenp\WebstormProjects\my_project\mongodb\mongo.config", net: { bindIp: "127.0.0.1", port: 27017 }, processManagement: { windowsService: { description: "MongoDb Server 3.2, localhost access only, port:27017" } }, service: true, storage: { dbPath: "C:\Users\reuvenp\WebstormProjects\my_project\mongodb\data", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "C:\Users\reuvenp\WebstormProjects\my_project\mongodb\log\mongod.log" } }
+2016-11-05T20:26:11.280+0200 I -        [initandlisten] Detected data files in C:\Users\reuvenp\WebstormProjects\my_project\mongodb\data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2016-11-05T20:26:11.282+0200 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-11-05T20:26:12.372+0200 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-11-05T20:26:12.372+0200 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/Users/reuvenp/WebstormProjects/my_project/mongodb/data/diagnostic.data'
+2016-11-05T20:26:12.654+0200 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-11-05T20:49:11.831+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54185 #1 (1 connection now open)
+2016-11-05T20:50:14.553+0200 I NETWORK  [conn1] end connection 127.0.0.1:54185 (0 connections now open)
+2016-11-05T20:50:15.999+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54582 #2 (1 connection now open)
+2016-11-05T20:51:49.351+0200 I NETWORK  [conn2] end connection 127.0.0.1:54582 (0 connections now open)
+2016-11-05T20:51:50.851+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55021 #3 (1 connection now open)
+2016-11-05T21:40:24.409+0200 I NETWORK  [conn3] end connection 127.0.0.1:55021 (0 connections now open)
+2016-11-05T21:40:25.989+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54391 #4 (1 connection now open)
+2016-11-05T21:40:44.350+0200 I NETWORK  [conn4] end connection 127.0.0.1:54391 (0 connections now open)
+2016-11-05T21:40:45.861+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54473 #5 (1 connection now open)
+2016-11-05T21:46:21.079+0200 I NETWORK  [conn5] end connection 127.0.0.1:54473 (0 connections now open)
+2016-11-05T21:46:22.596+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63324 #6 (1 connection now open)
+2016-11-05T22:04:39.011+0200 I NETWORK  [conn6] end connection 127.0.0.1:63324 (0 connections now open)
+2016-11-05T22:04:53.499+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53985 #7 (1 connection now open)
+2016-11-05T22:05:18.235+0200 I NETWORK  [conn7] end connection 127.0.0.1:53985 (0 connections now open)
+2016-11-05T22:05:22.739+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:54196 #8 (1 connection now open)
+2016-11-05T22:07:12.541+0200 I NETWORK  [conn8] end connection 127.0.0.1:54196 (0 connections now open)
+2016-11-05T22:07:14.244+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55016 #9 (1 connection now open)
+2016-11-05T22:09:33.914+0200 I NETWORK  [conn9] end connection 127.0.0.1:55016 (0 connections now open)
+2016-11-05T22:09:35.442+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55931 #10 (1 connection now open)
+2016-11-05T22:10:36.441+0200 I NETWORK  [conn10] end connection 127.0.0.1:55931 (0 connections now open)
+2016-11-05T22:10:38.034+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56237 #11 (1 connection now open)
+2016-11-05T22:11:24.862+0200 I NETWORK  [conn11] end connection 127.0.0.1:56237 (0 connections now open)
+2016-11-05T22:12:56.742+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57063 #12 (1 connection now open)
+2016-11-05T22:15:03.428+0200 I NETWORK  [conn12] end connection 127.0.0.1:57063 (0 connections now open)
+2016-11-05T22:15:05.173+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58080 #13 (1 connection now open)
+2016-11-05T22:15:33.583+0200 I NETWORK  [conn13] end connection 127.0.0.1:58080 (0 connections now open)
+2016-11-05T22:15:35.007+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58252 #14 (1 connection now open)
+2016-11-05T22:20:44.626+0200 I NETWORK  [conn14] end connection 127.0.0.1:58252 (0 connections now open)
+2016-11-05T22:21:10.075+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57125 #15 (1 connection now open)
+2016-11-05T22:21:10.100+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57127 #16 (2 connections now open)
+2016-11-05T22:22:06.238+0200 I NETWORK  [conn16] end connection 127.0.0.1:57127 (1 connection now open)
+2016-11-05T22:22:06.238+0200 I NETWORK  [conn15] end connection 127.0.0.1:57125 (1 connection now open)
+2016-11-05T22:22:07.695+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57485 #17 (1 connection now open)
+2016-11-05T22:27:46.643+0200 I NETWORK  [conn17] end connection 127.0.0.1:57485 (0 connections now open)
+2016-11-05T22:27:48.536+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59460 #18 (1 connection now open)
+2016-11-05T22:27:57.395+0200 I NETWORK  [conn18] end connection 127.0.0.1:59460 (0 connections now open)
+2016-11-05T22:27:58.851+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59577 #19 (1 connection now open)
+2016-11-05T22:27:58.875+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59578 #20 (2 connections now open)
+2016-11-05T22:28:06.982+0200 I NETWORK  [conn20] end connection 127.0.0.1:59578 (1 connection now open)
+2016-11-05T22:28:06.982+0200 I NETWORK  [conn19] end connection 127.0.0.1:59577 (0 connections now open)
+2016-11-05T22:28:08.457+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59615 #21 (1 connection now open)
+2016-11-05T22:36:20.244+0200 I NETWORK  [conn21] end connection 127.0.0.1:59615 (0 connections now open)
+2016-11-05T22:36:21.715+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62622 #22 (1 connection now open)
+2016-11-05T22:37:22.809+0200 I NETWORK  [conn22] end connection 127.0.0.1:62622 (0 connections now open)
+2016-11-05T22:37:24.356+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63002 #23 (1 connection now open)
+2016-11-05T22:37:24.378+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63003 #24 (2 connections now open)
+2016-11-05T22:37:31.356+0200 I NETWORK  [conn23] end connection 127.0.0.1:63002 (1 connection now open)
+2016-11-05T22:37:31.359+0200 I NETWORK  [conn24] end connection 127.0.0.1:63003 (0 connections now open)
+2016-11-05T22:37:32.845+0200 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63036 #25 (1 connection now open)
