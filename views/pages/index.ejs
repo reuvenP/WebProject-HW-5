@@ -36,7 +36,7 @@
             <div class="navbar-inner">
                 <a class="brand" href="/"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
                 <form class="form-inline navbar-search" method="post" action="products.html" >
-                    <input id="srchFld" class="srchTxt" type="text" />
+
                     <select class="srchTxt">
                         <% for(var i=0; i<options.length; i++) {%>
                         <option><%= options[i] %></option>
@@ -45,9 +45,9 @@
                     <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
                 </form>
                 <ul id="topMenu" class="nav pull-right">
-                    <li class=""><a href="special_offer.html">Branches</a></li>
+                    <li class=""><a href="#branches">Branches</a></li>
                     <li class=""><a href="normal.html">Delivery</a></li>
-                    <li class=""><a href="contact.html">Contact</a></li>
+                    <li class=""><a href="#contact">Contact</a></li>
                     <li class="">
                         <a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
                         <div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
@@ -189,7 +189,7 @@
             </div>
             <!-- Sidebar end=============================================== -->
             <div id="main">
-                <p>Place holder to Angular Template</p>
+                <div ng-view></div>
             </div>
         </div>
     </div>
