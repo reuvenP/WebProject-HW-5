@@ -2,19 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07f97b02-6c36-44c5-8db4-1e9f899a4e1b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DAL/branchSchema.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mongodb/data/journal/WiredTigerLog.0000000001" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/diagnostic.data/metrics.2016-11-03T18-51-35Z-00000" afterPath="$PROJECT_DIR$/mongodb/data/diagnostic.data/metrics.2016-11-03T18-51-35Z-00000" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DAL/flowerSchema.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DAL/userSchema.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/diagnostic.data/metrics.2016-11-05T18-26-13Z-00000" afterPath="$PROJECT_DIR$/mongodb/data/diagnostic.data/metrics.2016-11-05T18-26-13Z-00000" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/diagnostic.data/metrics.interim" afterPath="$PROJECT_DIR$/mongodb/data/diagnostic.data/metrics.interim" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/journal/WiredTigerLog.0000000002" afterPath="$PROJECT_DIR$/mongodb/data/journal/WiredTigerLog.0000000002" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/themes/images/carousel/1.png" afterPath="$PROJECT_DIR$/public/themes/images/carousel/1.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DAL/branchSchema.js" afterPath="$PROJECT_DIR$/DAL/branchSchema.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/WiredTiger.turtle" afterPath="$PROJECT_DIR$/mongodb/data/WiredTiger.turtle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/WiredTiger.wt" afterPath="$PROJECT_DIR$/mongodb/data/WiredTiger.wt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/_mdb_catalog.wt" afterPath="$PROJECT_DIR$/mongodb/data/_mdb_catalog.wt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/collection-0--7606153359408619166.wt" afterPath="$PROJECT_DIR$/mongodb/data/collection-0--7606153359408619166.wt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/index-1--7606153359408619166.wt" afterPath="$PROJECT_DIR$/mongodb/data/index-1--7606153359408619166.wt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/collection-2--1652522024036825824.wt" afterPath="$PROJECT_DIR$/mongodb/data/collection-2--1652522024036825824.wt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/data/sizeStorer.wt" afterPath="$PROJECT_DIR$/mongodb/data/sizeStorer.wt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongodb/log/mongod.log" afterPath="$PROJECT_DIR$/mongodb/log/mongod.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/index.ejs" afterPath="$PROJECT_DIR$/views/pages/index.ejs" />
     </list>
     <ignored path="my_project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/pages/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2236">
-              <caret line="149" column="153" selection-start-line="149" selection-start-column="153" selection-end-line="149" selection-end-column="153" />
+            <state relative-caret-position="1536">
+              <caret line="150" column="82" selection-start-line="150" selection-start-column="82" selection-end-line="150" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -60,19 +63,43 @@
       <file leaf-file-name="branchSchema.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DAL/branchSchema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="26" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+            <state relative-caret-position="170">
+              <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flowerSchema.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL/flowerSchema.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#43#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userSchema.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DAL/userSchema.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-36">
+              <caret line="23" column="17" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#43#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,10 +123,12 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/partials/body.ejs" />
         <option value="$PROJECT_DIR$/views/partials/header.ejs" />
-        <option value="$PROJECT_DIR$/views/pages/index.ejs" />
         <option value="$PROJECT_DIR$/mongodb/DAL/branchSchema.js" />
         <option value="$PROJECT_DIR$/DAL/branchSchema.js" />
+        <option value="$PROJECT_DIR$/DAL/userSchema.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/DAL/flowerSchema.js" />
+        <option value="$PROJECT_DIR$/views/pages/index.ejs" />
       </list>
     </option>
   </component>
@@ -280,7 +309,7 @@
       <workItem from="1478185396693" duration="282000" />
       <workItem from="1478193331270" duration="3743000" />
       <workItem from="1478240488493" duration="4025000" />
-      <workItem from="1478370445095" duration="6173000" />
+      <workItem from="1478370445095" duration="15039000" />
     </task>
     <task id="LOCAL-00001" summary="Carousell added">
       <created>1478196180700</created>
@@ -303,11 +332,25 @@
       <option name="project" value="LOCAL" />
       <updated>1478369202527</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="branch schema">
+      <created>1478378554758</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1478378554758</updated>
+    </task>
+    <task id="LOCAL-00005" summary="branch schema">
+      <created>1478378650114</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1478378650114</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23588000" />
+    <option name="totallyTimeSpent" value="32454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -346,11 +389,12 @@
     <MESSAGE value="Carousell added" />
     <MESSAGE value="mongodb added" />
     <MESSAGE value="mongo" />
-    <option name="LAST_COMMIT_MESSAGE" value="mongo" />
+    <MESSAGE value="branch schema" />
+    <option name="LAST_COMMIT_MESSAGE" value="branch schema" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -593,6 +637,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -611,26 +656,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/index.ejs">
+    <entry file="file://$PROJECT_DIR$/DAL/branchSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2236">
-          <caret line="149" column="153" selection-start-line="149" selection-start-column="153" selection-end-line="149" selection-end-column="153" />
+        <state relative-caret-position="51">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="26" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DAL/branchSchema.js">
+    <entry file="file://$PROJECT_DIR$/DAL/userSchema.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="-36">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DAL/flowerSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+        <state relative-caret-position="170">
+          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1536">
+          <caret line="150" column="82" selection-start-line="150" selection-start-column="82" selection-end-line="150" selection-end-column="82" />
           <folding />
         </state>
       </provider>

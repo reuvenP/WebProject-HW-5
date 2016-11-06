@@ -1,19 +1,18 @@
 /**
- * Created by reuvenp on 11/5/2016.
+ * Created by reuvenp on 11/6/2016.
  */
 var mongo = require('mongoose');
 var Schema = mongo.Schema;
 
-var branchSchema = new Schema({
+var flowerSchema = new Schema({
     name: String,
-    number: Number,
-    location: String,
-    isActive: Boolean,
-    openingHours: String,
+    color: String,
+    image_link: String,
+    price: Number,
     created_at: Date,
     updated_at: Date
 });
-branchSchema.pre('save',function (next) {
+flowerSchema.pre('save',function (next) {
     // get the current date
     var currentDate = new Date();
     // change the updated_at field to current date
@@ -23,5 +22,5 @@ branchSchema.pre('save',function (next) {
         this.created_at = currentDate;
     next();
 });
-var Branch = mongo.model('Branch', branchSchema);
-module.exports = Branch;
+var Flower = mongo.model('Flower', flowerSchema);
+module.exports = Flower;
