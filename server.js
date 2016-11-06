@@ -25,10 +25,16 @@ User.find({}, function(err, users) {
     // object of all the branches
     console.log(users);
 });
+
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.get('/', function (req, res) {
-    res.render('pages/index',{user:"Reuven", num_of_items:4, options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+    Branch.find({}, function(err, branches) {
+        if (err) throw err;
+        // object of all the branches
+        res.render('pages/index',{user:"Reuven", num_of_items:4, options:['All ', 'Ariel Ben-Ami ', 'Shmulik '], branches: branches});
+    });
+
 }).listen(3000);
 
 function AddBranch(pname, pnumber, plocation, popeningHours) {
