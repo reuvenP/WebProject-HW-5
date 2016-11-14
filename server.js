@@ -14,6 +14,25 @@ var Permission = User.permission;
 var db = mongo.connect('mongodb://localhost:27017/myseconddatabase');
 //db.once('open', function() { console.log("Connected to DB") });
 //db.on('error', function() {  console.log("Error connecting to DB") });
+
+/*
+AddBranch('Siaglit', 1, 'Sigalit 1 Rishon Leziyon', '08:00-19:00');
+AddBranch('Nurit', 2, 'Nurit 2 Jerusalem', '08:00-19:00');
+
+AddUser("Moshe Levi", 'moshe', '1234', 2, new Date('1981-01-01'), 'google.com', 1);
+AddUser("Yossi Cohen", 'yossi', '1234', 2, new Date('1982-02-02'), 'yahoo.com', 1);
+AddUser("Noam Buzaglo", 'noam', '1234', 3, new Date('1983-03-03'), 'youtube.com', 1);
+
+AddUser("Avi Biton", 'avi', '1234', 2, new Date('1984-04-04'), 'microsoft.com', 2);
+AddUser("Daniel Friedman", 'daniel', '1234', 2, new Date('1985-05-05'), 'facebook.com', 2);
+AddUser("David Bergman", 'david', '1234', 3, new Date('1986-06-06'), 'twitter.com', 2);
+
+AddUser("Itay Maor", 'itay', '1234', 0, new Date('1987-07-07'), 'flickr.com', null);
+AddUser("Yehuda Dayan", 'yehuda', '1234', 0, new Date('1988-08-08'), 'alibaba.com', null);
+AddUser("Moishe Ufnik", 'moishe', '1234', 0, new Date('1989-09-09'), 'aliexpress.com', null);
+AddUser("Kipy Ben-Kipod", 'kipy', '1234', 0, new Date('1990-10-10'), 'ebay.com', null);
+*/
+
 console.log('Pending DB connection');
 Branch.find({}, function(err, branches) {
     if (err) throw err;
