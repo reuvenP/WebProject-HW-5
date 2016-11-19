@@ -5,19 +5,19 @@ var myapp = angular.module('myapp', ['ngRoute']);
 myapp.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'index.ejs',
-            controller  : 'mainController'
+            templateUrl: 'SPA/views/about.html',
         })
 
         .when('/branches', {
-            templateUrl: 'themes/js/branches.ejs',
-            controller  : 'branchesController'
+            templateUrl: 'SPA/views/branches.html',
+            controller  : 'branchesController',
+            controllerAs : 'branches'
         });
-});
-
-myapp.controller('mainController', function ($scope) {
-
-});
-myapp.controller('branchesController', function ($scope) {
-
-});
+}).controller('branchesController', ['$http',
+    function branchesController($http) {
+        var scope = this;
+        $http.get('/getBranches').then(function (response) {
+            scope.test = 'bla';
+            scope.branchesList = response.data;
+        });
+}]);

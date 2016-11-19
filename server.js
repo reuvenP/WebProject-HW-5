@@ -34,11 +34,7 @@ AddUser("Kipy Ben-Kipod", 'kipy', '1234', 0, new Date('1990-10-10'), 'ebay.com',
 */
 
 console.log('Pending DB connection');
-Branch.find({}, function(err, branches) {
-    if (err) throw err;
-    // object of all the branches
-    console.log(branches);
-});
+
 User.find({}, function(err, users) {
     if (err) throw err;
     // object of all the branches
@@ -54,7 +50,18 @@ app.get('/', function (req, res) {
         res.render('pages/index',{user:"Reuven", options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
     });
 
-}).listen(3000);
+});
+
+app.get('/getBranches', function (req, res) {
+    Branch.find({}, function(err, branches) {
+        if (err) throw err;
+        // object of all the branches
+        console.log(branches);
+        res.json(branches);
+    });
+});
+
+app.listen(3000);
 
 function AddBranch(pname, pnumber, plocation, popeningHours) {
     var branch = new Branch({

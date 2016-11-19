@@ -582,3 +582,37 @@
 2016-11-06T18:51:29.026+0200 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
 2016-11-06T18:51:29.026+0200 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/Users/reuvenp/WebstormProjects/my_project/mongodb/data/diagnostic.data'
 2016-11-06T18:51:29.234+0200 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-11-13T23:34:36.429+0200 I CONTROL  [main] ***** SERVER RESTARTED *****
+2016-11-13T23:34:36.629+0200 I CONTROL  [initandlisten] MongoDB starting : pid=3464 port=27017 dbpath=C:\Code\internet_project\WebProject-HW-5\mongodb\data 64-bit host=DESKTOP-B4FESV8
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten] db version v3.2.10
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten] git version: 79d9b3ab5ce20f51c272b4411202710a082d0317
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1t-fips  3 May 2016
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten] modules: none
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten] build environment:
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-13T23:34:36.630+0200 I CONTROL  [initandlisten] options: { config: "C:\Code\internet_project\WebProject-HW-5\mongodb\mongo.config", net: { bindIp: "127.0.0.1", port: 27017 }, processManagement: { windowsService: { description: "MongoDb Server 3.2, localhost access only, port:27017" } }, storage: { dbPath: "C:\Code\internet_project\WebProject-HW-5\mongodb\data", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "C:\Code\internet_project\WebProject-HW-5\mongodb\log\mongod.log" } }
+2016-11-13T23:34:36.631+0200 E NETWORK  [initandlisten] listen(): bind() failed errno:10048 Only one usage of each socket address (protocol/network address/port) is normally permitted. for socket: 127.0.0.1:27017
+2016-11-13T23:34:36.631+0200 E STORAGE  [initandlisten] Failed to set up sockets during startup.
+2016-11-13T23:34:36.631+0200 I CONTROL  [initandlisten] dbexit:  rc: 48
+2016-11-13T23:39:53.116+0200 I CONTROL  [main] ***** SERVER RESTARTED *****
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] MongoDB starting : pid=3036 port=27017 dbpath=C:\Code\internet_project\WebProject-HW-5\mongodb\data 64-bit host=DESKTOP-B4FESV8
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] db version v3.2.10
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] git version: 79d9b3ab5ce20f51c272b4411202710a082d0317
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1t-fips  3 May 2016
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] modules: none
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] build environment:
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-13T23:39:53.354+0200 I CONTROL  [initandlisten] options: { config: "c:\Code\internet_project\WebProject-HW-5\mongodb\mongo.config", net: { bindIp: "127.0.0.1", port: 27017 }, processManagement: { windowsService: { description: "MongoDb Server 3.2, localhost access only, port:27017" } }, storage: { dbPath: "C:\Code\internet_project\WebProject-HW-5\mongodb\data", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "C:\Code\internet_project\WebProject-HW-5\mongodb\log\mongod.log" } }
+2016-11-13T23:39:53.355+0200 I -        [initandlisten] Detected data files in C:\Code\internet_project\WebProject-HW-5\mongodb\data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2016-11-13T23:39:53.356+0200 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-11-13T23:39:53.366+0200 I -        [initandlisten] Assertion: 28595:2: No such file or directory
+2016-11-13T23:39:53.367+0200 I STORAGE  [initandlisten] exception in initAndListen: 28595 2: No such file or directory, terminating
+2016-11-13T23:39:53.367+0200 I CONTROL  [initandlisten] dbexit:  rc: 100
