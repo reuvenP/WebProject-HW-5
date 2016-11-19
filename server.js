@@ -51,7 +51,7 @@ app.get('/', function (req, res) {
     Branch.find({}, function(err, branches) {
         if (err) throw err;
         // object of all the branches
-        res.render('pages/index',{user:"Reuven", num_of_items:4, options:['All ', 'Ariel Ben-Ami ', 'Shmulik '], branches: branches});
+        res.render('pages/index',{user:"Reuven", options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
     });
 
 }).listen(3000);
