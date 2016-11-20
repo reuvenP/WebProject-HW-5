@@ -54,15 +54,15 @@ app.use(cookieParser());
 app.get('/', function (req, res) {
     //userID = mongo.Types.ObjectId('583179b55823d22d60b31cd1');
     userID = req.cookies['userID'];
-        User.findById(userID, function (err, user) {
-        if (err) throw err;
-        if (!user){
-            res.cookie('userID', '583179b55823d22d60b31cd1');
-            res.render('pages/index',{user:null, options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+        User.findById(userID, function (err, user) {if (err) throw err;
+        if (!user) {
+            //res.cookie('userID', '583179b55823d22d60b31cd1');
+            res.render('pages/index', {user: null, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
         }
-        else{
-            res.render('pages/index',{user:user, options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+        else {
+            res.render('pages/index', {user: user, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
         }
+
     })
 });
 
