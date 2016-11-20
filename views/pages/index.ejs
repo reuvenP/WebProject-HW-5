@@ -19,7 +19,13 @@
 <div id="header">
     <div class="container">
         <div id="welcomeLine" class="row">
-            <div class="span6">Welcome! <strong><%= user%></strong></div>
+            <div class="span6">Welcome! <strong>
+                    <%if (!user) { %>
+                    User
+                    <% } else{ %>
+                    <%= user.name%>
+                    <% } %>
+                </strong></div>
             <!--
             <div class="span6">
                 <div class="pull-right">
@@ -53,7 +59,7 @@
                     <li class=""><a href="#/branches">Branches</a></li>
                     <li class=""><a href="normal.html">Delivery</a></li>
                     <li class=""><a href="#contact">Contact</a></li>
-                    <%if (user == 'User') { %>
+                    <%if (!user) { %>
                     <li class="">
                         <a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
                         <div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >

@@ -57,11 +57,11 @@ app.get('/', function (req, res) {
         User.findById(userID, function (err, user) {
         if (err) throw err;
         if (!user){
-            //res.cookie('userID', '583179b55823d22d60b31cd1');
-            res.render('pages/index',{user:"User", options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+            res.cookie('userID', '583179b55823d22d60b31cd1');
+            res.render('pages/index',{user:null, options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
         }
         else{
-            res.render('pages/index',{user:user.name, options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+            res.render('pages/index',{user:user, options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
         }
     })
 });
