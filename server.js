@@ -9,6 +9,7 @@ var Schema = mongo.Schema;
 var Branch = require('./DAL/branchSchema');
 var User = require('./DAL/userSchema');
 var Flower = require('./DAL/flowerSchema');
+var cookieParser = require('cookie-parser');
 var Permission = User.permission;
 //var db = mongo.createConnection('mongodb://localhost:27017/myfirstdatabase');
 var db = mongo.connect('mongodb://localhost:27017/myseconddatabase');
@@ -41,28 +42,34 @@ AddBranch('Rakefet', 7, 'Rakefet 7 Ashdod', '08:00-19:00');
 
 console.log('Pending DB connection');
 
-User.find({}, function(err, users) {
+/*User.find({}, function(err, users) {
     if (err) throw err;
     // object of all the branches
     console.log(users);
-});
+});*/
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(cookieParser());
 app.get('/', function (req, res) {
-    Branch.find({}, function(err, branches) {
+    //userID = mongo.Types.ObjectId('583179b55823d22d60b31cd1');
+    userID = req.cookies['userID'];
+        User.findById(userID, function (err, user) {
         if (err) throw err;
-        // object of all the branches
-        res.render('pages/index',{user:"Reuven", options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
-    });
-
+        if (!user){
+            //res.cookie('userID', '583179b55823d22d60b31cd1');
+            res.render('pages/index',{user:"User", options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+        }
+        else{
+            res.render('pages/index',{user:user.name, options:['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+        }
+    })
 });
 
 app.get('/getBranches', function (req, res) {
     Branch.find({}, function(err, branches) {
         if (err) throw err;
         // object of all the branches
-        console.log(branches);
         res.json(branches);
     });
 });
