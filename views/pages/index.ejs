@@ -12,7 +12,25 @@
     <style type="text/css" id="enject"></style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="SPA/script.js"></script>
+    <script>
+        function logout() {
+            document.cookie = 'userID=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            window.location='/';
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#loginBTN").click(function () {
+                var username = $("#inputUsername").val();
+                var password = $("#inputPassword").val();
+                $.get("/login", {username:username, password:password}, function (data) {
+                    window.location="/";
+                });
+            });
+        });
+    </script>
 </head>
 <!--ng-controller="mainController"-->
 <body>
@@ -78,13 +96,13 @@
                                     <div class="control-group">
                                     </div>
                                 </form>
-                                <button type="submit" class="btn btn-success">Sign in</button>
+                                <button id="loginBTN" class="btn btn-success">Sign in</button>
                                 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
                             </div>
                         </div>
                     </li>
                     <% } else{ %>
-                    <li class=""><a role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Logout</span></a></li>
+                    <li class=""><a role="button" onclick="logout()" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Logout</span></a></li>
                     <% } %>
                 </ul>
             </div>

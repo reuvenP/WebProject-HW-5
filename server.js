@@ -66,6 +66,16 @@ app.get('/', function (req, res) {
     })
 });
 
+app.get('/login', function (req, res) {
+    User.find({username:req.query.username, password:req.query.password}, function (err, user) {
+        if (err) throw err;
+        if (user.length == 1){
+            res.cookie('userID', user[0]._id);
+            res.redirect("/");
+        }
+    });
+});
+
 app.get('/getBranches', function (req, res) {
     Branch.find({}, function(err, branches) {
         if (err) throw err;
