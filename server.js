@@ -31,6 +31,12 @@ AddUser("Itay Maor", 'itay', '1234', 0, new Date('1987-07-07'), 'flickr.com', nu
 AddUser("Yehuda Dayan", 'yehuda', '1234', 0, new Date('1988-08-08'), 'alibaba.com', null);
 AddUser("Moishe Ufnik", 'moishe', '1234', 0, new Date('1989-09-09'), 'aliexpress.com', null);
 AddUser("Kipy Ben-Kipod", 'kipy', '1234', 0, new Date('1990-10-10'), 'ebay.com', null);
+
+AddBranch('Narkis', 3, 'Narkis 3 TLV', '08:00-19:00');
+AddBranch('Havazelet', 4, 'Havazelet 4 Naarya', '08:00-19:00');
+AddBranch('Yakinton', 5, 'Yakinton 5 Petah Tikva', '08:00-19:00');
+AddBranch('Vered', 6, 'Vered 6 Eilat', '08:00-19:00');
+AddBranch('Rakefet', 7, 'Rakefet 7 Ashdod', '08:00-19:00');
 */
 
 console.log('Pending DB connection');

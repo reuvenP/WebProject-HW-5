@@ -1,11 +1,12 @@
 <div>
-    <h4>Branches</h4>
-    <h1>{{branches.test}}</h1>
+    <h1>Branches</h1>
     <ul class="thumbnails">
             <li ng-repeat="branch in branches.branchesList" class="span3">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h5>{{branch.name}}</h5>
+                        <h3>Name: {{branch.name}}</h3>
+                        <h4>{{branch.location}}</h4>
+                        <h5>Opening Hours: {{branch.openingHours}}</h5>
                     </div>
                 </div>
             </li>
