@@ -18,5 +18,7 @@ myapp.config(function ($routeProvider) {
         var scope = this;
         $http.get('/getBranches').then(function (response) {
             scope.branchesList = response.data;
+        }, function (response) {
+            alert(response.statusText + " - " + response.data);
         });
 }]);

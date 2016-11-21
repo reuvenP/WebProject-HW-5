@@ -51,19 +51,51 @@ console.log('Pending DB connection');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(cookieParser());
+
+function loadUser(req, res, next) {
+    var userID = req.cookies['userID'];
+    if (userID) {
+        User.findById(userID, function (err, user) {
+            if (err) throw err;
+            if (user) {
+                req.user = user;
+                req.user.authenticated = true;
+            }
+            else {
+                setEmptyUser(req);
+            }
+            next();
+        });
+    }
+    else {
+        setEmptyUser(req);
+        next();
+    }
+}
+
+function setEmptyUser(req) {
+    req.user = new User();
+    req.user.authenticated = false;
+    req.user.name = 'Guest';
+    req.user.permission = 0;
+}
+
+app.use(loadUser);
+
 app.get('/', function (req, res) {
     //userID = mongo.Types.ObjectId('583179b55823d22d60b31cd1');
-    userID = req.cookies['userID'];
-        User.findById(userID, function (err, user) {if (err) throw err;
-        if (!user) {
-            //res.cookie('userID', '583179b55823d22d60b31cd1');
-            res.render('pages/index', {user: null, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
-        }
-        else {
-            res.render('pages/index', {user: user, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
-        }
-
-    })
+    // userID = req.cookies['userID'];
+    //     User.findById(userID, function (err, user) {if (err) throw err;
+    //     if (!user) {
+    //         //res.cookie('userID', '583179b55823d22d60b31cd1');
+    //         res.render('pages/index', {user: null, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+    //     }
+    //     else {
+    //         res.render('pages/index', {user: user, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
+    //     }
+    //
+    // })
+    res.render('pages/index', {user: req.user, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
 });
 
 app.get('/login', function (req, res) {
@@ -77,6 +109,13 @@ app.get('/login', function (req, res) {
 });
 
 app.get('/getBranches', function (req, res) {
+    //just example - delete this:
+    if (!req.user.authenticated) {
+        res.send('Please login first', 401);
+        return;
+    }
+    //
+
     Branch.find({}, function(err, branches) {
         if (err) throw err;
         // object of all the branches
