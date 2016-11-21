@@ -11,10 +11,7 @@ var User = require('./DAL/userSchema');
 var Flower = require('./DAL/flowerSchema');
 var cookieParser = require('cookie-parser');
 var Permission = User.permission;
-//var db = mongo.createConnection('mongodb://localhost:27017/myfirstdatabase');
 var db = mongo.connect('mongodb://localhost:27017/myseconddatabase');
-//db.once('open', function() { console.log("Connected to DB") });
-//db.on('error', function() {  console.log("Error connecting to DB") });
 
 /*
 AddBranch('Siaglit', 1, 'Sigalit 1 Rishon Leziyon', '08:00-19:00');
@@ -38,15 +35,15 @@ AddBranch('Havazelet', 4, 'Havazelet 4 Naarya', '08:00-19:00');
 AddBranch('Yakinton', 5, 'Yakinton 5 Petah Tikva', '08:00-19:00');
 AddBranch('Vered', 6, 'Vered 6 Eilat', '08:00-19:00');
 AddBranch('Rakefet', 7, 'Rakefet 7 Ashdod', '08:00-19:00');
-*/
+
+AddFlower('Flower 1', 'Color 1', 'themes/images/flower1.jpg', '21.80');
+AddFlower('Flower 2', 'Color 2', 'themes/images/flower2.jpg', '13.90');
+AddFlower('Flower 3', 'Color 3', 'themes/images/flower3.jpg', '89.90');
+AddFlower('Flower 4', 'Color 4', 'themes/images/flower4.jpg', '1.70');
+AddFlower('Flower 5', 'Color 5', 'themes/images/flower5.jpg', '14.40');
+ */
 
 console.log('Pending DB connection');
-
-/*User.find({}, function(err, users) {
-    if (err) throw err;
-    // object of all the branches
-    console.log(users);
-});*/
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -83,23 +80,11 @@ function setEmptyUser(req) {
 app.use(loadUser);
 
 app.get('/', function (req, res) {
-    //userID = mongo.Types.ObjectId('583179b55823d22d60b31cd1');
-    // userID = req.cookies['userID'];
-    //     User.findById(userID, function (err, user) {if (err) throw err;
-    //     if (!user) {
-    //         //res.cookie('userID', '583179b55823d22d60b31cd1');
-    //         res.render('pages/index', {user: null, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
-    //     }
-    //     else {
-    //         res.render('pages/index', {user: user, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
-    //     }
-    //
-    // })
     res.render('pages/index', {user: req.user, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
 });
 
 app.get('/login', function (req, res) {
-    User.find({username:req.query.username, password:req.query.password}, function (err, user) {
+    User.find({username:req.query.username, password:req.query.password, isActive: true}, function (err, user) {
         if (err) throw err;
         if (user.length == 1){
             res.cookie('userID', user[0]._id);
@@ -116,10 +101,18 @@ app.get('/getBranches', function (req, res) {
     }
     //
 
-    Branch.find({}, function(err, branches) {
+    Branch.find({isActive: true}, function(err, branches) {
         if (err) throw err;
         // object of all the branches
         res.json(branches);
+    });
+});
+
+app.get('/getFlowers', function (req, res) {
+    Flower.find({isActive: true}, function(err, flowers) {
+        if (err) throw err;
+        // object of all the branches
+        res.json(flowers);
     });
 });
 
@@ -173,6 +166,35 @@ function AddUser(pname, pusername, ppassword, ppermission, pbirthday, pwebsite, 
     user.save(function (err) {
         if (err) throw err;
         console.log('user saved');
+    });
+}
+
+function AddFlower(name, color, image_link, price) {
+    var flower = new Flower({
+        name: name,
+        color: color,
+        image_link: image_link,
+        price: price,
+        isActive: true
+    });
+    flower.save(function (err) {
+        if (err) throw err;
+        console.log('flower saved');
+    });
+}
+
+function UpdateFlower(flower_new) {
+    Flower.findById(flower_new._id, function (err, flower) {
+        if (err) throw err;
+        flower.isActive = flower_new.isActive;
+        flower.name = flower_new.name;
+        flower.color = flower_new.color;
+        flower.image_link = flower_new.image_link;
+        flower.price = flower_new.price;
+        flower.save(function (err) {
+            if (err) throw err;
+            console.log('flower updated');
+        });
     });
 }
 

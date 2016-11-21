@@ -9,6 +9,7 @@ var flowerSchema = new Schema({
     color: String,
     image_link: String,
     price: Number,
+    isActive: Boolean,
     created_at: Date,
     updated_at: Date
 });

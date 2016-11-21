@@ -1,0 +1,16 @@
+<div>
+    <h1>Flowers</h1>
+    <ul class="thumbnails">
+        <li ng-repeat="flower in flowers.flowersList" class="span3">
+            <div class="thumbnail">
+                <a><img src={{flower.image_link}} alt=""></a>
+                <div class="caption">
+
+                    <h3>Name: {{flower.name}}</h3>
+                    <h4>{{flower.color}}</h4>
+                    <h5>Price: {{flower.price}}</h5>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
