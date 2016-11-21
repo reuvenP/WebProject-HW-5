@@ -44,6 +44,16 @@ myapp.config(function ($routeProvider) {
         });
     }]).controller('branchesManagementController', ['$http',
     function branchesManagementController($http) {
+        this.addBranch = function (branch) {
+            if (!branch || !branch.name || !branch.location || !branch.openingHours){
+                alert('Fill all the fields!');
+            }
+            $http.get('/addBranch?name=' + branch.name + '&num=' + branch.number + '&location=' + branch.location + '&h=' + branch.openingHours).then(function (response) {
+                scope.branchesList = response.data;
+            }, function (response) {
+                alert(response.statusText + " - " + response.data);
+            });
+        };
         this.editBranch = function (branch) {
             $http.get('/editBranch?branch_id=' + branch._id + '&name=' + branch.name + '&location=' + branch.location + '&h=' + branch.openingHours).then(function (response) {
                 scope.branchesList = response.data;
