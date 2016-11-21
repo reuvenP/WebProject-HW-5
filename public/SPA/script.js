@@ -88,7 +88,21 @@ myapp.config(function ($routeProvider) {
                 alert('Fill all required fields!');
             }
             $http.get('/addUser?name=' + user.name + '&username=' + user.username + '&password=' + user.password +
-                        '&birthday=' + user.meta.birthday + '&website=' + user.meta.website + '&permission=0&branch_number=0')
+                        '&birthday=' + user.meta.birthday + '&website=' + user.meta.website +
+                        '&branch_number=' + user.branch_number + '&permission=0')
+                .then(function (response) {
+                    scope.usersList = response.data;
+                }, function (response) {
+                    alert(response.statusText + " - " + response.data);
+                });
+        };
+        scope.addUser = function(user) {
+            if (!user || !user.name || !user.username || !user.password){
+                alert('Fill all required fields!');
+            }
+            $http.get('/addUser?name=' + user.name + '&username=' + user.username + '&password=' + user.password +
+                        '&birthday=' + user.meta.birthday + '&website=' + user.meta.website +
+                        '&branch_number=' + user.branch_number + '&permission=' + user.permission)
                 .then(function (response) {
                     scope.usersList = response.data;
                 }, function (response) {
@@ -97,7 +111,8 @@ myapp.config(function ($routeProvider) {
         };
         scope.editUser = function (user) {
             $http.get('/editUser?user_id=' + user._id + '&name=' + user.name + '&username=' + user.username + '&password=' + user.password +
-                        '&birthday=' + user.meta.birthday + '&website=' + user.meta.website + '&permission=0&branch_number=0')
+                        '&birthday=' + user.meta.birthday + '&website=' + user.meta.website +
+                        '&branch_number=' + user.branch_number + '&permission=' + user.permission)
                 .then(function (response) {
                     scope.usersList = response.data;
                 }, function (response) {

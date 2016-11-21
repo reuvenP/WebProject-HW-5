@@ -22,11 +22,20 @@
                                 <input type="date" ng-model="usersManagement.newUser.meta.birthday"><br/>
                                 <p class="label">Web site:</p>
                                 <input type="text" ng-model="usersManagement.newUser.meta.website"><br/>
+                                <p class="label">Belongs to branch:</p>
+                                <input type="text" ng-model="usersManagement.newUser.branch_number"><br/>
+                                <p class="label">User Type:</p>
+                                <select ng-model="usersManagement.newUser.permission">
+                                    <option value="0">Client</option>
+                                    <option value="1">Supplier</option>
+                                    <option value="2">Worker</option>
+                                    <option value="3">Manager</option>
+                                </select><br/>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button data-dismiss="modal" ng-click="usersManagement.addClient(usersManagement.newUser)" type="submit" class="btn btn-success">Save</button>
+                        <button data-dismiss="modal" ng-click="usersManagement.addUser(usersManagement.newUser)" type="submit" class="btn btn-success">Save</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>
@@ -94,6 +103,15 @@
                                             <input type="text" ng-model="user.meta.birthday"><br/>
                                             <p class="label">Web site:</p>
                                             <input type="text" ng-model="user.meta.website"><br/>
+                                            <p class="label">Belongs to branch:</p>
+                                            <input type="text" ng-model="user.branch_number"><br/>
+                                            <p class="label">User Type:</p>
+                                            <select ng-model="user.permission">
+                                                <option value="0">Client</option>
+                                                <option value="1">Supplier</option>
+                                                <option value="2">Worker</option>
+                                                <option value="3">Manager</option>
+                                            </select><br/>
                                         </div>
                                     </form>
                                 </div>
