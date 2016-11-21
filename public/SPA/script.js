@@ -44,6 +44,9 @@ myapp.config(function ($routeProvider) {
         });
     }]).controller('branchesManagementController', ['$http',
     function branchesManagementController($http) {
+        this.editBranch = function (branch) {
+            alert(branch.name);
+        };
         this.deleteRow = function (branch) {
             $http.get('/deleteBranch?branch_id=' + branch._id).then(function (response) {
                 scope.branchesList = response.data;
