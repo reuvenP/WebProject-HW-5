@@ -18,7 +18,14 @@ myapp.config(function ($routeProvider) {
             templateUrl: 'SPA/views/flowers.html',
             controller  : 'flowersController',
             controllerAs : 'flowers'
-        });
+        })
+
+        .when('/branchesManagement', {
+            templateUrl: 'SPA/views/branchesManagement.html',
+            controller  : 'branchesManagementController',
+            controllerAs : 'branchesManagement'
+        })
+    ;
 }).controller('branchesController', ['$http',
     function branchesController($http) {
         var scope = this;
@@ -32,6 +39,14 @@ myapp.config(function ($routeProvider) {
         var scope = this;
         $http.get('/getFlowers').then(function (response) {
             scope.flowersList = response.data;
+        }, function (response) {
+            alert(response.statusText + " - " + response.data);
+        });
+    }]).controller('branchesManagementController', ['$http',
+    function branchesManagementController($http) {
+        var scope = this;
+        $http.get('/branchesManagement').then(function (response) {
+            scope.branchesList = response.data;
         }, function (response) {
             alert(response.statusText + " - " + response.data);
         });

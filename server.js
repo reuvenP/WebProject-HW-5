@@ -94,13 +94,6 @@ app.get('/login', function (req, res) {
 });
 
 app.get('/getBranches', function (req, res) {
-    //just example - delete this:
-    if (!req.user.authenticated) {
-        res.send('Please login first', 401);
-        return;
-    }
-    //
-
     Branch.find({isActive: true}, function(err, branches) {
         if (err) throw err;
         // object of all the branches
@@ -113,6 +106,18 @@ app.get('/getFlowers', function (req, res) {
         if (err) throw err;
         // object of all the branches
         res.json(flowers);
+    });
+});
+
+app.get('/branchesManagement', function (req, res) {
+    if (!req.user.authenticated || req.user.permission < 3) {
+        res.send('Please login as admin first', 401);
+        return;
+    }
+    Branch.find({isActive: true}, function(err, branches) {
+        if (err) throw err;
+        // object of all the branches
+        res.json(branches);
     });
 });
 
