@@ -141,6 +141,31 @@ app.get('/deleteBranch', function (req, res) {
     });
 });
 
+app.get('/editBranch', function (req, res) {
+    if (!req.user.authenticated || req.user.permission < 3) {
+        res.send('Please login as admin first', 401);
+        return;
+    }
+    var branchID = req.query.branch_id;
+    var branchName = req.query.name;
+    var branchLocation = req.query.location;
+    var hours = req.query.h;
+    Branch.findById(branchID, function (err, brunch) {
+        if (err) throw err;
+        brunch.name = branchName;
+        brunch.location = branchLocation;
+        brunch.openingHours = hours;
+        brunch.save(function (err) {
+            if (err) throw err;
+            Branch.find({isActive: true}, function (err, branches) {
+                if (err) throw err;
+                // object of all the branches
+                res.json(branches);
+            });
+        });
+    });
+});
+
 app.listen(3000);
 
 function AddBranch(pname, pnumber, plocation, popeningHours) {

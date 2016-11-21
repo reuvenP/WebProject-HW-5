@@ -31,8 +31,8 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/SPA/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="47" column="46" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="46" />
+            <state relative-caret-position="80">
+              <caret line="47" column="34" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -41,10 +41,12 @@
       <file leaf-file-name="branchesManagement.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/SPA/views/branchesManagement.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="33" column="86" selection-start-line="33" selection-start-column="86" selection-end-line="33" selection-end-column="86" />
+            <state relative-caret-position="224">
+              <caret line="56" column="102" selection-start-line="56" selection-start-column="102" selection-end-line="56" selection-end-column="102" />
               <folding>
+                <element signature="n#div#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="e#1385#1392#0" expanded="true" />
+                <element signature="e#2805#2812#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,8 +55,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="129" column="19" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
+            <state relative-caret-position="134">
+              <caret line="155" column="40" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -63,8 +65,8 @@
       <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/index.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="83" column="42" selection-start-line="80" selection-start-column="32" selection-end-line="83" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -133,8 +135,8 @@
         <option value="$PROJECT_DIR$/public/themes/js/bootstrap.min.js" />
         <option value="$PROJECT_DIR$/public/themes/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/views/pages/index.ejs" />
-        <option value="$PROJECT_DIR$/public/SPA/script.js" />
         <option value="$PROJECT_DIR$/public/SPA/views/branchesManagement.html" />
+        <option value="$PROJECT_DIR$/public/SPA/script.js" />
         <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
@@ -384,7 +386,7 @@
       <workItem from="1479667511983" duration="3967000" />
       <workItem from="1479680875784" duration="8074000" />
       <workItem from="1479715990271" duration="4601000" />
-      <workItem from="1479722753170" duration="16661000" />
+      <workItem from="1479722753170" duration="19695000" />
     </task>
     <task id="LOCAL-00001" summary="Carousell added">
       <created>1478196180700</created>
@@ -533,11 +535,25 @@
       <option name="project" value="LOCAL" />
       <updated>1479732052111</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="delete branch complete">
+      <created>1479742217410</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1479742217410</updated>
+    </task>
+    <task id="LOCAL-00023" summary="edit branch started">
+      <created>1479743534203</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1479743534204</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117035000" />
+    <option name="totallyTimeSpent" value="120069000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -601,7 +617,9 @@
     <MESSAGE value="include cookie-parser in package.json" />
     <MESSAGE value="Flowers page added" />
     <MESSAGE value="before tables jquery" />
-    <option name="LAST_COMMIT_MESSAGE" value="before tables jquery" />
+    <MESSAGE value="delete branch complete" />
+    <MESSAGE value="edit branch started" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit branch started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -886,8 +904,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/index.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="102">
+          <caret line="83" column="42" selection-start-line="80" selection-start-column="32" selection-end-line="83" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#a#0;n#li#6;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -896,26 +914,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/SPA/views/branchesManagement.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="33" column="86" selection-start-line="33" selection-start-column="86" selection-end-line="33" selection-end-column="86" />
+        <state relative-caret-position="224">
+          <caret line="56" column="102" selection-start-line="56" selection-start-column="102" selection-end-line="56" selection-end-column="102" />
           <folding>
+            <element signature="n#div#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="e#1385#1392#0" expanded="true" />
+            <element signature="e#2805#2812#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/SPA/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="46" />
+        <state relative-caret-position="80">
+          <caret line="47" column="34" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="129" column="19" selection-start-line="129" selection-start-column="19" selection-end-line="129" selection-end-column="19" />
+        <state relative-caret-position="134">
+          <caret line="155" column="40" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
           <folding />
         </state>
       </provider>
