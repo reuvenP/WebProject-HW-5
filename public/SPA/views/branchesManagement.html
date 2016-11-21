@@ -8,6 +8,8 @@
                     <th>Name</th>
                     <th>Location</th>
                     <th>Opening Hours</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -16,6 +18,26 @@
                         <td>{{branch.name}}</td>
                         <td>{{branch.location}}</td>
                         <td>{{branch.openingHours}}</td>
+                        <td>
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#confirmDelete{{branch.name}}">Delete</button>
+                            <div id="confirmDelete{{branch.name}}" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Confirm Delete</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>delete branch {{branch.name}}?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button id="OKDelete" data-dismiss="modal" ng-click="branchesManagement.deleteRow(branch)" type="submit" class="btn btn-success">OK</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
