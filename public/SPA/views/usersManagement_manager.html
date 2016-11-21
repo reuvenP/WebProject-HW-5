@@ -1,0 +1,112 @@
+<div>
+    <h1>Clients Management</h1>
+    <div class="container">
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addClient">Add New User</button>
+        <div id="addClient" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New Client</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal loginFrm">
+                            <div class="control-group">
+                                <p class="label">Full Name:</p>
+                                <input type="text" ng-model="usersManagement.newUser.name"><br/>
+                                <p class="label">Username:</p>
+                                <input type="text" ng-model="usersManagement.newUser.username"><br/>
+                                <p class="label">Password:</p>
+                                <input type="text" ng-model="usersManagement.newUser.password"><br/>
+                                <p class="label">Birthday:</p>
+                                <input type="date" ng-model="usersManagement.newUser.meta.birthday"><br/>
+                                <p class="label">Web site:</p>
+                                <input type="text" ng-model="usersManagement.newUser.meta.website"><br/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" ng-click="usersManagement.addClient(usersManagement.newUser)" type="submit" class="btn btn-success">Save</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br/>
+    <div class="container">
+        <table id="usersTable" class="table table-striped table-responsive table-bordered" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>User Type</th>
+                <th>Birthday</th>
+                <th>Website</th>
+                <th>Branch Number</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in usersManagement.usersList">
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.permission}}</td>
+                <td><div>{{user.meta.birthday}}</div></td>
+                <td><div ng-show="{{user.meta.website && user.meta.website != 'undefined'}}">{{user.meta.website}}</div></td>
+                <td><div ng-show="{{user.branch_number}}">{{user.branch_number}}</div></td>
+                <td>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#confirmDelete{{user._id}}">Delete</button>
+                    <div id="confirmDelete{{user._id}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Confirm Delete</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>delete user {{user.name}}?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="OKDelete" data-dismiss="modal" ng-click="usersManagement.deleteUser(user)" type="submit" class="btn btn-success">OK</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#edit{{user._id}}">Edit</button>
+                    <div id="edit{{user._id}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Edit {{user.name}}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal loginFrm">
+                                        <div class="control-group">
+                                            <p class="label">Full Name:</p>
+                                            <input type="text" ng-model="user.name"><br/>
+                                            <p class="label">Username:</p>
+                                            <input type="text" ng-model="user.username"><br/>
+                                            <p class="label">Password:</p>
+                                            <input type="text" ng-model="user.password"><br/>
+                                            <p class="label">Birthday:</p>
+                                            <input type="text" ng-model="user.meta.birthday"><br/>
+                                            <p class="label">Web site:</p>
+                                            <input type="text" ng-model="user.meta.website"><br/>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" ng-click="usersManagement.editUser(user)" type="submit" class="btn btn-success">Save</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

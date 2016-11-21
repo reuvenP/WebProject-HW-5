@@ -13,18 +13,18 @@
                         <form class="form-horizontal loginFrm">
                             <div class="control-group">
                                 <p class="label">Branch Number:</p>
-                                <input type="text" ng-model="branch.number"><br/>
+                                <input type="text" ng-model="branchesManagement.newBranch.number"><br/>
                                 <p class="label">Branch Name:</p>
-                                <input type="text" ng-model="branch.name"><br/>
+                                <input type="text" ng-model="branchesManagement.newBranch.name"><br/>
                                 <p class="label">Location:</p>
-                                <input type="text" ng-model="branch.location"><br/>
+                                <input type="text" ng-model="branchesManagement.newBranch.location"><br/>
                                 <p class="label">Opening Hours:</p>
-                                <input type="text" ng-model="branch.openingHours">
+                                <input type="text" ng-model="branchesManagement.newBranch.openingHours">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button data-dismiss="modal" ng-click="branchesManagement.addBranch(branch)" type="submit" class="btn btn-success">Save</button>
+                        <button data-dismiss="modal" ng-click="branchesManagement.addBranch(branchesManagement.newBranch)" type="submit" class="btn btn-success">Save</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>

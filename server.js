@@ -46,7 +46,6 @@ AddFlower('Flower 5', 'Color 5', 'themes/images/flower5.jpg', '14.40');
 console.log('Pending DB connection');
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
 app.use(cookieParser());
 
 function loadUser(req, res, next) {
@@ -79,6 +78,20 @@ function setEmptyUser(req) {
 
 app.use(loadUser);
 
+app.get('/SPA/views/usersManagement.html', function (req, res) {
+    if (req.user.permission < 2) {
+        res.send('No permission for users management', 401);
+    }
+    else if (req.user.permission == 2) {
+        res.sendFile('public/SPA/views/usersManagement_worker.html', { root: __dirname });
+    }
+    else {
+        res.sendFile('public/SPA/views/usersManagement_manager.html', { root: __dirname });
+    }
+});
+
+app.use(express.static('public'));
+
 app.get('/', function (req, res) {
     res.render('pages/index', {user: req.user, options: ['All ', 'Ariel Ben-Ami ', 'Shmulik ']});
 });
@@ -106,6 +119,14 @@ app.get('/getFlowers', function (req, res) {
         if (err) throw err;
         // object of all the branches
         res.json(flowers);
+    });
+});
+
+app.get('/getUsers', function (req, res) {
+    User.find({isActive: true}, function(err, users) {
+        if (err) throw err;
+        // object of all the branches
+        res.json(users);
     });
 });
 
@@ -188,6 +209,82 @@ app.get('/addBranch', function (req, res) {
             if (err) throw err;
             // object of all the branches
             res.json(branches);
+        });
+    });
+});
+
+app.get('/addUser', function (req, res) {
+    if (req.user.permission < 2 || (req.user.permission < 3 && req.query.permission > 0)) {
+        res.send('No permission for that type of user', 401);
+        return;
+    }
+
+    var user = new User({
+        name: req.query.name,
+        username: req.query.username,
+        password: req.query.password,
+        permission: req.query.permission,
+        isActive: true,
+        meta: {birthday: req.query.birthday,
+            website: req.query.website},
+        branch_number: req.query.branch_number
+    });
+    user.save(function (err) {
+        if (err) throw err;
+        User.find({isActive: true}, function (err, users) {
+            if (err) throw err;
+            // object of all the branches
+            res.json(users);
+        });
+    });
+});
+
+app.get('/editUser', function (req, res) {
+    if (req.user.permission < 2 || (req.user.permission < 3 && req.query.permission > 0)) {
+        res.send('No permission for that type of user', 401);
+        return;
+    }
+
+    var userID = req.query.user_id;
+    User.findById(userID, function (err, user) {
+        if (err) throw err;
+
+        user.name = req.query.name;
+        user.username = req.query.username;
+        user.password = req.query.password;
+        user.permission = req.query.permission;
+        user.meta.birthday = req.query.birthday;
+        user.meta.website = req.query.website;
+        user.branch_number = req.query.branch_number;
+
+        user.save(function (err) {
+            if (err) throw err;
+            User.find({isActive: true}, function (err, users) {
+                if (err) throw err;
+                // object of all the branches
+                res.json(users);
+            });
+        });
+    });
+});
+
+app.get('/deleteUser', function (req, res) {
+    if (req.user.permission < 2 || (req.user.permission < 3 && req.query.permission > 0)) {
+        res.send('No permission for that type of user', 401);
+        return;
+    }
+
+    var userID = req.query.user_id;
+    User.findById(userID, function (err, user) {
+        if (err) throw err;
+        user.isActive = false;
+        user.save(function (err) {
+            if (err) throw err;
+            User.find({isActive: true}, function (err, users) {
+                if (err) throw err;
+                // object of all the branches
+                res.json(users);
+            });
         });
     });
 });
